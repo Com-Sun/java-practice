@@ -11,15 +11,15 @@ public class StructuredProgram {
 		int[] korList = new int[3];
 
 		while (keepLoop) {
-			menu = 메인메뉴();
+			menu = inputMenu();
 
 			switch (menu) {
 			case 1:
-				성적입력(korList);
+				inputKor(korList);
 
 				break;
 			case 2:
-				성적출력(korList);
+				printKor(korList);
 
 				break;
 			case 3:
@@ -36,7 +36,7 @@ public class StructuredProgram {
 		}
 	}// end main
 
-	static void 성적입력(int[] kors) {
+	static void inputKor(int[] kors) {
 		int kor;
 
 		Scanner scan = new Scanner(System.in);
@@ -61,7 +61,7 @@ public class StructuredProgram {
 
 	} // end 성적입력
 
-	static void 성적출력(int[] kors) {
+	static void printKor(int[] kors) {
 
 		int total = 0;
 		float avg;
@@ -85,12 +85,12 @@ public class StructuredProgram {
 
 	} // end 성적출력
 
-	static int 메인메뉴() {
+	static int inputMenu() {
 
 		Scanner scan = new Scanner(System.in);
 
 		System.out.println("┌───────────────────────────┐");
-		System.out.println("│           메인 메뉴                   │");
+		System.out.println("│           메인 메뉴                    │");
 		System.out.println("└───────────────────────────┘");
 		System.out.println("\t1. 성적입력 ");
 		System.out.println("\t2. 성적출력 ");
