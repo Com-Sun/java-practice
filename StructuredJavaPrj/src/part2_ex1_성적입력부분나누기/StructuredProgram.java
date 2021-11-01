@@ -101,5 +101,5 @@ public class StructuredProgram {
 
 		return menu;
 
-	}// end 메인메뉴
+	}// end 인풋메뉴
 }

@@ -1,4 +1,4 @@
-/*package part2_ex3_데이터구조화;
+package part2_ex3_데이터구조화;
 
 import java.util.Scanner;
 
@@ -20,7 +20,7 @@ public class Program {
 
 				break;
 			case 2:
-				printKor(exams);
+				printList(exams);
 
 				break;
 			case 3:
@@ -34,13 +34,37 @@ public class Program {
 
 			}
 
-		} // end while
+		}
 
-	} // end main
+	}// end main
+
+	private static void printList(Exam[] exams) {
+		System.out.println("┌───────────────────────────┐");
+		System.out.println("│           성적  출력                   │");
+		System.out.println("└───────────────────────────┘");
+		System.out.println();
+
+		for (int i = 0; i < 3; i++) {
+			Exam exam = exams[i];
+			int kor = exam.kor;
+			int eng = exam.eng;
+			int math = exam.math;
+
+			int total = kor + eng + math;
+			float avg = total / 3.0f;
+
+			System.out.printf("국어 : %d\n", kor);
+			System.out.printf("영어 : %d\n", eng);
+			System.out.printf("수학 : %d\n", math);
+
+			System.out.printf("총점 : %3d\n", total);
+			System.out.printf("평균 : %6.2f\n", avg);
+			System.out.println("─────────────────────────────");
+
+		}
+	}
 
 	private static void inputList(Exam[] exams) {
-		int kor;
-
 		Scanner scan = new Scanner(System.in);
 
 		System.out.println("┌───────────────────────────┐");
@@ -49,19 +73,43 @@ public class Program {
 		System.out.println();
 
 		for (int i = 0; i < 3; i++) {
+			int kor, eng, math;
+
 			do {
-				System.out.printf("국어%d : ", i + 1);
+				System.out.printf("국어 : ");
 				kor = scan.nextInt();
 
 				if (kor < 0 || 100 < kor)
 					System.out.println("국어성적은 0~100까지의 범위만 입력이 가능합니다.");
 
 			} while (kor < 0 || 100 < kor);
-			kors[i] = kor;
-		}
-		System.out.println("─────────────────────────────");
 
-	}//end inputList
+			do {
+				System.out.printf("영어 : ");
+				eng = scan.nextInt();
+
+				if (eng < 0 || 100 < eng)
+					System.out.println("영어성적은 0~100까지의 범위만 입력이 가능합니다.");
+
+			} while (eng < 0 || 100 < eng);
+
+			do {
+				System.out.printf("수학 : ");
+				math = scan.nextInt();
+
+				if (math < 0 || 100 < math)
+					System.out.println("수학성적은 0~100까지의 범위만 입력이 가능합니다.");
+
+			} while (math < 0 || 100 < math);
+			
+			Exam exam = new Exam();
+			exam.kor = kor;
+			exam.eng = eng;
+			exam.math = math;
+			
+			exams[i] = exam;
+		}
+	}// end inputList
 
 	static int inputMenu() {
 
@@ -77,8 +125,7 @@ public class Program {
 		int menu = scan.nextInt();
 
 		return menu;
-	}// end inputMenu
+
+	}// end 인풋메뉴
 
 }// end class
-
-*/

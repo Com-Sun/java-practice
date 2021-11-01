@@ -29,7 +29,7 @@ public class ExamProgram {
 
 			
 			System.out.printf("국어 : %d\n", kor);
-			System.out.printf("영어 : %d\n", eng);
+			System.out.printf("영어 : %d\n",  eng);
 			System.out.printf("수학 : %d\n", math);
 
 			System.out.printf("총점 : %3d\n", total);
