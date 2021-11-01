@@ -1,13 +1,13 @@
-package part2_ex1_성적입력부분나누기;
+/*package part2_ex3_데이터구조화;
 
 import java.util.Scanner;
 
-public class StructuredProgram {
+public class Program {
 
 	public static void main(String[] args) {
-		
-		int[] korList = new int[3];
-		
+
+		Exam[] exams = new Exam[3];
+
 		int menu;
 		boolean keepLoop = true;
 
@@ -16,11 +16,11 @@ public class StructuredProgram {
 
 			switch (menu) {
 			case 1:
-				inputKor(korList);
+				inputList(exams);
 
 				break;
 			case 2:
-				printKor(korList);
+				printKor(exams);
 
 				break;
 			case 3:
@@ -34,10 +34,11 @@ public class StructuredProgram {
 
 			}
 
-		}
-	}// end main
+		} // end while
 
-	static void inputKor(int[] kors) {
+	} // end main
+
+	private static void inputList(Exam[] exams) {
 		int kor;
 
 		Scanner scan = new Scanner(System.in);
@@ -60,31 +61,7 @@ public class StructuredProgram {
 		}
 		System.out.println("─────────────────────────────");
 
-	} // end 성적입력
-
-	static void printKor(int[] kors) {
-
-		int total = 0;
-		float avg;
-
-		for (int i = 0; i < 3; i++)
-			total += kors[i];
-
-		avg = total / 3.0f;
-
-		System.out.println("┌───────────────────────────┐");
-		System.out.println("│           성적  출력                   │");
-		System.out.println("└───────────────────────────┘");
-		System.out.println();
-
-		for (int i = 0; i < 3; i++)
-			System.out.printf("국어 %d : %3d\n", 3 - i, kors[i]);
-
-		System.out.printf("총점 : %3d\n", total);
-		System.out.printf("평균 : %6.2f\n", avg);
-		System.out.println("─────────────────────────────");
-
-	} // end 성적출력
+	}//end inputList
 
 	static int inputMenu() {
 
@@ -100,6 +77,8 @@ public class StructuredProgram {
 		int menu = scan.nextInt();
 
 		return menu;
+	}// end inputMenu
 
-	}// end 메인메뉴
-}
+}// end class
+
+*/
