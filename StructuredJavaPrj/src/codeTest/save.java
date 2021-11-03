@@ -1,9 +1,11 @@
 package codeTest;
 
-class Solution {
-	public static int[] solution(int[] lottos, int[] win_nums) {
-
-		int count = 0;
+public class save {
+	/*
+	 class Solution {
+    public int[] solution(int[] lottos, int[] win_nums) {
+        
+        int count = 0;
 		int numZero = 0;
 		int[] answer = new int[2];
 
@@ -138,13 +140,8 @@ class Solution {
 		}
 
 		return answer;
-	}
+    }
+}
+	 */
 
-	public static void main(String[] args) {
-		int[] lottos = { 1, 2, 3, 4, 0, 0 };
-		int[] win_nums = { 1, 2, 3, 4, 5, 6 };
-
-		solution(lottos, win_nums);
-
-	}
 }
