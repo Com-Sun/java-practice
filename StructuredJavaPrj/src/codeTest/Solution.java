@@ -1,150 +1,54 @@
 package codeTest;
 
 class Solution {
-	public static int[] solution(int[] lottos, int[] win_nums) {
+	public String solution(String new_id) {
+		
+		String id = new_id;
+		char[] arrId = new char[id.length()];
 
-		int count = 0;
-		int numZero = 0;
-		int[] answer = new int[2];
+		int count;
+		for (count = 0 ; count < 7; count++) {
+			switch (count) {
+			case 0: 
+				for ( int i = 0; i < arrId.length; i++) {
+					arrId[i] = (id.charAt(i));
+					if (arrId[i] >= 65 && arrId[i] <= 90 ) {
+						arrId[i] += 32;
+					}
+				}
+				
+				break;
 
-		for (int i = 0; i < 6; i++) {
-			if (lottos[i] == 0) {
-				numZero++;
+			case 1: // 소문자, 숫자, -_. 제외 다제거
+				
+				break;
+
+			case 2:
+				break;
+
+			case 3:
+				break;
+
+			case 4:
+				break;
+
+			case 5:
+				break;
+
+			case 6:
+				break;
 			}
+
 		}
 
-		switch (numZero) {
-
-		case 0:
-			for (int i = 0; i < 6; i++) {
-				for (int j = 0; j < 6; j++) {
-					if (lottos[i] == win_nums[j]) {
-						count++;
-					}
-				}
-			}
-			answer[0] = 7 - count;
-			answer[1] = 7 - count;
-
-			if (answer[0] == 7) {
-				answer[0] = 6;
-			}
-
-			if (answer[1] == 7) {
-				answer[1] = 6;
-			}
-
-			break;
-
-		case 1:
-			for (int i = 0; i < 6; i++) {
-				for (int j = 0; j < 6; j++) {
-					if (lottos[i] == win_nums[j]) {
-						count++;
-					}
-				}
-			}
-			answer[0] = 6 - count;
-			answer[1] = 7 - count;
-
-			if (answer[1] == 7) {
-				answer[1] = 6;
-			}
-
-			break;
-
-		case 2:
-			for (int i = 0; i < 6; i++) {
-				for (int j = 0; j < 6; j++) {
-					if (lottos[i] == win_nums[j]) {
-						count++;
-					}
-				}
-
-			}
-			answer[0] = 5 - count;
-			answer[1] = 7 - count;
-
-			if (answer[1] == 7) {
-				answer[1] = 6;
-			}
-
-			break;
-
-		case 3:
-			for (int i = 0; i < 6; i++) {
-				for (int j = 0; j < 6; j++) {
-					if (lottos[i] == win_nums[j]) {
-						count++;
-					}
-				}
-			}
-			answer[0] = 4 - count;
-			answer[1] = 7 - count;
-
-			if (answer[1] == 7) {
-				answer[1] = 6;
-			}
-
-			break;
-
-		case 4:
-			for (int i = 0; i < 6; i++) {
-				for (int j = 0; j < 6; j++) {
-					if (lottos[i] == win_nums[j]) {
-						count++;
-					}
-				}
-			}
-			answer[0] = 3 - count;
-			answer[1] = 7 - count;
-
-			if (answer[1] == 7) {
-				answer[1] = 6;
-			}
-			break;
-
-		case 5:
-			for (int i = 0; i < 6; i++) {
-				for (int j = 0; j < 6; j++) {
-					if (lottos[i] == win_nums[j]) {
-						count++;
-					}
-				}
-			}
-			answer[0] = 2 - count;
-			answer[1] = 7 - count;
-
-			if (answer[1] == 7) {
-				answer[1] = 6;
-			}
-			break;
-
-		case 6:
-			for (int i = 0; i < 6; i++) {
-				for (int j = 0; j < 6; j++) {
-					if (lottos[i] == win_nums[j]) {
-						count++;
-					}
-				}
-			}
-			answer[0] = 1 - count;
-			answer[1] = 7 - count;
-
-			if (answer[1] == 7) {
-				answer[1] = 6;
-			}
-			break;
-		}
-
+		String answer = new String(arrId);
+		System.out.println(answer);
 		return answer;
 	}
 
-	public static void main(String[] args) {
-		int[] lottos = { 1, 2, 3, 4, 0, 0 };
-		int[] win_nums = { 1, 2, 3, 4, 5, 6 };
 
-		solution(lottos, win_nums);
+	public static void main(String[] args) {
+
 
 	}
 }

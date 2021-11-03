@@ -1,4 +1,4 @@
-package part3_ex3_Getters와Setters;
+package part3_ex4_UI코드분리하기;
 
 public class Exam {
 	int kor;
@@ -6,7 +6,6 @@ public class Exam {
 	int math;
 	
 	public Exam() {
-		this(0,0,0);
 	}
 	
 	public Exam(int kor, int eng, int math) {
