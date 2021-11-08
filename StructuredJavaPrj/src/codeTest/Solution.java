@@ -1,54 +1,31 @@
 package codeTest;
 
 class Solution {
-	public String solution(String new_id) {
+	public static void main(String[] args) {
 		
-		String id = new_id;
-		char[] arrId = new char[id.length()];
+		String[] input1 = {"a 10", "b 24"};
+		String[] input2 = {"PIZZA aabab 140", "SSE aaaab 164"};
+		String[] input3 = {"PIZZA 5", "SSE 1"};
+		
+		solution(input1, input2, input3);
 
-		int count;
-		for (count = 0 ; count < 7; count++) {
-			switch (count) {
-			case 0: 
-				for ( int i = 0; i < arrId.length; i++) {
-					arrId[i] = (id.charAt(i));
-					if (arrId[i] >= 65 && arrId[i] <= 90 ) {
-						arrId[i] += 32;
-					}
-				}
-				
-				break;
+	}
 
-			case 1: // 소문자, 숫자, -_. 제외 다제거
-				
-				break;
+	public static int solution(String[] ings, String[] menu, String[] sell) {
+		int answer = 0;
 
-			case 2:
-				break;
-
-			case 3:
-				break;
-
-			case 4:
-				break;
-
-			case 5:
-				break;
-
-			case 6:
-				break;
+		for (int i = 0; i < menu.length; i++) {
+			String[] menu1 = menu[i].split(" ");
+			for (int j = 0; j < 3; j ++) {
+				System.out.println(menu1[j]);
 			}
-
-		}
-
-		String answer = new String(arrId);
-		System.out.println(answer);
+		} // end for
+		
 		return answer;
 	}
 
-
-	public static void main(String[] args) {
-
-
-	}
 }
+
+//재료 : 이름(소문자 1) + 원가
+//메뉴 : 이름 + 필요 재료 + 판매가
+//판매 : 이름 + 판매 수량
