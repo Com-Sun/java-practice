@@ -32,14 +32,15 @@ public abstract class Exam {
 	public void setMath(int math) {
 		this.math = math;
 	}
-	public int total() {
-
-		return kor + eng + math;
+	
+	public abstract int total();
+	
+	protected int onTotal() {
+		return kor+eng+math;
 	}
-	public float avg() {
-
-		return total()/ 3.0f;
-	}
+	
+	
+	public abstract float avg();
 
 	
 }

@@ -2,15 +2,15 @@ package part3_ex5_추상화;
 
 import java.util.Scanner;
 
-public class ExamConsole {
+public abstract class ExamConsole {
 
 	private ExamList list = new ExamList();
-	
-	public void printList() {
-		printList(list.size()); // 코드의 집중화
+
+	public void print() {
+		print(list.size()); // 코드의 집중화
 	}
 
-	public void printList(int size) {
+	public void print(int size) {
 		System.out.println("┌───────────────────────────┐");
 		System.out.println("│           성적  출력                   │");
 		System.out.println("└───────────────────────────┘");
@@ -37,8 +37,8 @@ public class ExamConsole {
 		}
 
 	}
-	
-	public void inputList() {
+
+	public void input() {
 		Scanner scan = new Scanner(System.in);
 
 		System.out.println("┌───────────────────────────┐");
@@ -78,12 +78,18 @@ public class ExamConsole {
 		 * Exam exam = new Exam(); exam.setKor(kor);// exam.kor = kor;
 		 * exam.setEng(kor);// exam.eng = eng; exam.setMath(kor);// exam.math = math;
 		 */
-		//Exam exam = new Exam(kor, eng, math);
+		// Exam exam = new Exam(kor, eng, math);
+		Exam exam = makeExam();
+		exam.setKor(kor);
+		exam.setEng(eng);
+		exam.setMath(math);
 
 		// add -------------------------------------
 
-		//list.add(exam);
+		list.add(exam);
 
 	}// end inputList
+
+	protected abstract Exam makeExam();
 
 }
